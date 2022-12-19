@@ -24,5 +24,18 @@ def load_game():
             difficulty_chosen = input('its not a valid number, please try again')
     print('Thank you, you have entered level of difficulty:',difficulty_chosen)
 
+
 load_game()
+
+import GuessGame
+import MemoryGame
+import CurrencyRouletteGame
+
+if game_chosen == 1:
+    GuessGame.play1()
+elif game_chosen == 2:
+    MemoryGame.play2()
+elif game_chosen == 3:
+    CurrencyRouletteGame.play3()
+
 
