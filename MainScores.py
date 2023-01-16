@@ -1,13 +1,40 @@
-from flask import Flask, redirect, url_for, render_template
-
+from Utils import *
+from flask import Flask, redirect, request
 app = Flask(__name__)
 
-@app.route("/")
-def score_game():
-    return render_template("scores.game.html")
 
-def score_error():
-    return render_template("scores.error.html")
+def score_server():
+    try:
+        file = open("Scores.txt", "r")
+        the_score = file.read()
+        sending = f'''<html>
+    <head>
+    <title>Scores Game</title>
+    </head>
+    <body>
+    <h1>The score is <div id="score">{the_score}</div></h1>
+    </body>
+    </html>'''
+    except:
+        sending = f'''<html>
+    <head>
+    <title>Scores Game</title>
+    </head>
+    <body>
+    <body>
+    <h1><div id="score" style="color:red">{'ERROR'}</div></h1>
+    </body>
+    </html>'''
+
+    @app.route("/")
+    def web_score():
+        if request.method == "GET":
+            return sending
+        elif request.method == "POST":
+            return "you are doing something wrong"
+
+    app.run(host="0.0.0.0", port=5001, debug=True)
 
 
-app.run('0.0.0.0')
+score_server()
+
