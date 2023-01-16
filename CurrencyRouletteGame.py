@@ -1,8 +1,5 @@
-
-
 import random
 from currency_converter import CurrencyConverter
-
 from Score import add_score
 
 
