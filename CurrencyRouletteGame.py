@@ -1,6 +1,10 @@
 
+
 import random
 from currency_converter import CurrencyConverter
+
+from Score import add_score
+
 
 def get_money_interval(difficulty):
     c = CurrencyConverter()
@@ -13,9 +17,13 @@ def get_money_interval(difficulty):
     real_number = secret_number * f_crncy
     if (real_number - (5 - difficulty)) < suggested_guess < (real_number + (5 - difficulty)):
         print("You are very close! You win!")
+        add_score(difficulty)
+
         return True
     else:
         print("You are very far! You lose!")
+        add_score(difficulty)
+
         return False
 
 
