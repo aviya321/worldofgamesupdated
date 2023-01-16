@@ -27,13 +27,12 @@ def load_game():
         not_valid = False
 
     checking = True
-    difficulty = ""
     while checking:
-        difficulty = (input('Please choose a level of difficulty to select from 1 to 5:'))
-        if not 5 >= int(difficulty) >= 1:
+        difficulty = int(input('Please choose a level of difficulty to select from 1 to 5:'))
+        if not 5 >= difficulty >= 1:
             print('its not a valid number, please try again')
             continue
-        if not difficulty.isdigit():
+        if not str(difficulty).isdigit:
             print('its not a valid number, please try again')
             continue
         print('Thank you, you have entered level of difficulty:', difficulty)
