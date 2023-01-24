@@ -1,6 +1,6 @@
 FROM python:3
 RUN pip install flask
-COPY mainscore.py /app/
-COPY scores.txt /app/
+COPY Mainscores.py /app/
+COPY Scores.txt /app/
 WORKDIR /app/
-CMD python mainscore.py
+CMD python Mainscores.py
