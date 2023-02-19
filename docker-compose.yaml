@@ -3,7 +3,6 @@ version: '2'
 services:
   Aviya:
     image: worldofgames-project
-    container_name: WorldOfGames_Platform
     build: .
     ports:
       - "5000:5000"
