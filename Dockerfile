@@ -1,6 +1,11 @@
-FROM python:3
+FROM python:3.9
 RUN pip install flask
-COPY Mainscores.py /app/
-COPY Scores.txt /app/
+# Copy the current directory contents into the container as /app
+COPY mainscore.py /app/
+COPY scores.txt /app/
+# Set the working directory to /app
 WORKDIR /app/
-CMD python Mainscores.py
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+CMD ["python", "MainScores.py"]
+
