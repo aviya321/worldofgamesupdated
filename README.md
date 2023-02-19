@@ -1,41 +1,20 @@
-This is a testing project for Devops course made by devopsexperts
-And lead by Doron Nuni, Team Lead Devops at Cognyte
+World Of Games (WoG)
 
-Live.py
-Create a new python program, call it Live.py. The file will include the following functions:
+CLI gaming platform that allows player to choose and play a command line based game. this project was created during DevOps training course, lead by Doron Nuni, Team Lead Devops at Cognyte and demonstrates Python coding, working with Flask and HTML page creation and publishing, using Docker (& Docker-compose) to package the app into a container and running it in a Jenkins Pipeline with some Selenium automation tests on the games scoreboard.
 
-welcome(name)
-This function has a person name as an input and returns a string in the following layout:
+The program will install all needed python module dependencies, Prompt user to enter player name and display the available games menu.
 
-Hello <name> and welcome to the World of Games (WoG).
-Here you can find many cool games to play.
+Player will need to enter a game and difficulty level. Python flask module is used to display the leaderboard on HTML web page and can be accessed from: 127.0.0.1:5000 once running.
 
-load_game()
-This function prints out the following text:
-Please choose a game to play:
+Execution
 
-Memory Game
+WoG platform can be run locally using the built in bat for Windows, and sh files for Unix\Linux. The web page will automatically open in the default browser showing the Score of all the total plat until now. Once closed, the platform and the flask application will be purged from active memory and will no longer be accessible.
 
-a sequence of numbers will appear for 1 second and you have to guess it back
-Guess Game
+Testing, Jenkins and Pipeline fun
 
-guess a number and see if you chose like the computer
-Currency Roulette
+You can run the test pipeline using the already, available Jenkinsfile. However, to push the build image to your own docker hub you will need to provide
 
-try and guess the value of a random amount of USD in ILS
-Gets an input from the user about the game he chose.
-After receiving the game number from the user, the function will get the level of difficulty
-with the following text and also save to a variable:
-Please choose game difficulty from 1 to 5: \
+Environment and minimum requirements
 
-The function will check the input of the chosen game (the input suppose to be a number between 1 to 3),
-also will check the input of level of difficulty (input should be a number between 1 to 5).
+The platform was made compatible with Windows, Linux, Mac operating systems CLI. the platform was written is python3.9 code infrastructure, as such Python 3.9 and pip installer must be present on system. Jenkins and Docker are needed to run the testing pipeline.
 
-MainGame.py
-The purpose of this file is to call the functions from Live.py,
-it can be looking as follows:
-
-from Live import load_game, welcome 
-
-print(welcome("Guy")) 
-load_game()
